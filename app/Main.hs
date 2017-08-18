@@ -21,10 +21,17 @@ content :: ( DomBuilder (SpiderTimeline Global) m
            )
         => m ()
 content = divClass "Content" $ do
-    divClass "left" evalDiv
-    divClass "right" $ el "table" $
-        mapM_ (\(x, y) -> el "tr" $ do el "td" $ text x
-                                       el "td" $ text y) nockRedexes
+    el "div" evalDiv
+    el "div" $ do
+        el "div" $ el "p" $
+                 text "Press enter in text field to\
+                     \ interpert aribitrary Nock. As an example, try `[5 4 0 1]`\
+                     \ which increments the atom `5` by one or `[[0 9] 3 [0 1]]`\
+                     \ which checks if `[0 9]` is a cell or an atom."
+
+        el "table" $
+            mapM_ (\(x, y) -> el "tr" $ do el "td" $ text x
+                                           el "td" $ text y) nockRedexes
 
 evalDiv :: ( DomBuilder (SpiderTimeline Global) m
            , DomBuilderSpace m ~ GhcjsDomSpace
@@ -32,6 +39,7 @@ evalDiv :: ( DomBuilder (SpiderTimeline Global) m
            , PostBuild (SpiderTimeline Global) m
            )
         => m ()
+
 evalDiv = el "div" $ do
 
     el "p" $ text "Nock Interpreter"
@@ -124,10 +132,6 @@ css = " \
     \    -moz-font-smoothing: antialiased;\
     \    font-smoothing: antialiased;\
     \    font-weight: 300;\
-    \}\
-    \.left {\
-    \    float: left;\
-    \    margin-right: 15px;\
     \}\
     \/*\
     \    Hack to remove background from Mobile Safari.\
