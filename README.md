@@ -10,11 +10,5 @@ a pun on "reflexive nock" since reflexive French verbs have the forms like
 
 ```
 cabal configure --ghcjs
-./reflex-platform/work-on ghcjs ./. --run "ghcid -c'cabal repl'"
-```
-
-using current submodule scheme:
-
-```
 ./reflex-platform/work-on ./ghcjs-packages.nix ./.
 ```
