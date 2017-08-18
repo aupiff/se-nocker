@@ -3,7 +3,7 @@ se-nocker
 
 # Etymology
 
-A pun on "reflexive nock" since reflexive French verbs have the forms like
+A pun on "reflexive nock" since reflexive French verbs have forms like
 "se ----er", e.g. "se raser" means "to shave oneself".
 
 # Set-up

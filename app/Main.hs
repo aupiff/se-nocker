@@ -47,7 +47,7 @@ evalDiv = el "div" $ do
     nockEvent <- el "div" $ do
         nockInput <- textInput def
 
-        -- textInputGetEnter = keypress Enter
+        -- TODO: textInputGetEnter = keypress Enter
         let evalEvent = textInputGetEnter nockInput
             input = tagPromptlyDyn (_textInput_value nockInput) evalEvent
             interpResult :: Event (SpiderTimeline Global) T.Text
