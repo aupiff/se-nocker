@@ -25,7 +25,7 @@ content = divClass "Content" $ do
     el "div" $ do
         el "div" $ el "p" $
                  text "Press enter in text field to\
-                     \ interpert aribitrary Nock. As an example, try `[5 4 0 1]`\
+                     \ interpret aribitrary Nock. As an example, try `[5 4 0 1]`\
                      \ which increments the atom `5` by one or `[[0 9] 3 [0 1]]`\
                      \ which checks if `[0 9]` is a cell or an atom."
 
